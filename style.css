@@ -71,6 +71,12 @@ h2 {
   margin-bottom: 1rem;
 }
 
+a {
+  color: #1a1a1a;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
 /* ---------- FOOTER ---------- */
 footer {
   position: fixed;
