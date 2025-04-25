@@ -1,38 +1,62 @@
 body {
-  font-family: sans-serif;
   margin: 0;
-  padding: 0;
-  background: #fefefe;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #333;
+  background: #fffdf9;
+  letter-spacing: 0.015em;
 }
 
-header {
-  background: #ff7f50;
-  color: white;
-  padding: 3rem;
-  text-align: center;
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  align-items: flex-start;
+}
+
+.main-header .left h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-weight: 300;
+  margin-top: 0.3rem;
+  letter-spacing: 0.05em;
+  font-size: 0.9rem;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
 }
 
 section {
-  padding: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.project {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.project img {
-  max-width: 200px;
-  border-radius: 8px;
+  margin-bottom: 4rem;
 }
 
 footer {
-  text-align: center;
-  padding: 1rem;
+  position: fixed;
+  bottom: 1rem;
+  left: 2rem;
   font-size: 0.8rem;
   color: #777;
 }
