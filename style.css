@@ -1,30 +1,27 @@
-/* RESET BASE */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BODY BASE */
+/* BODY */
 body {
   background: #fffdf9;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   color: #1a1a1a;
-  height: 100vh;
-  width: 100vw;
-  overflow-x: hidden;
-  position: relative;
+  min-height: 100vh;
+  width: 100%;
 }
 
-/* HEADER FISSO */
+/* HEADER */
 .fixed-header {
   position: fixed;
-  inset: 0; /* Top, Bottom, Left, Right = 0 */
+  width: 100%;
+  height: 100%;
   padding: 2rem;
-  pointer-events: none;
+  pointer-events: none; /* gli elementi interni gestiscono i click */
 }
-
-/* ELEMENTI FISSI SUGLI ANGOLI */
 
 /* TOP LEFT */
 .top-left {
@@ -34,6 +31,97 @@ body {
   pointer-events: auto;
 }
 
-/* Nome */
 .top-left h1 {
   font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  margin-top: 0.4rem;
+}
+
+/* TOP RIGHT (MENU) */
+.top-right {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  pointer-events: auto;
+}
+
+.top-right ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.top-right ul li a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* BOTTOM RIGHT (SOCIAL + CONTACT) */
+.bottom-right {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  pointer-events: auto;
+}
+
+.social-links {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.social-links a {
+  color: inherit;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+.contact-button {
+  background: none;
+  border: 1px solid #1a1a1a;
+  padding: 0.8rem 1.5rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+}
+
+/* CONTENUTO CENTRALE */
+.main-content {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* RESPONSIVE TELEFONO */
+@media (max-width: 768px) {
+  .top-right ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    position: absolute;
+    top: auto;
+    bottom: 6rem;
+    left: 2rem;
+    right: auto;
+  }
+}
