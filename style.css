@@ -15,21 +15,21 @@ body {
   overflow-x: hidden;
 }
 
-/* HEADER FISSO */
+/* HEADER */
 .fixed-header {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   padding: 2rem;
-  pointer-events: none; /* così il main è cliccabile */
 }
 
-/* NOME + SOTTOTITOLO */
+/* TOP LEFT */
 .top-left {
   position: absolute;
   top: 2rem;
   left: 2rem;
-  pointer-events: auto;
 }
 
 .top-left h1 {
@@ -47,12 +47,11 @@ body {
   margin-top: 0.4rem;
 }
 
-/* MENU IN ALTO A DESTRA */
+/* TOP RIGHT MENU */
 .top-right {
   position: absolute;
   top: 2rem;
   right: 2rem;
-  pointer-events: auto;
 }
 
 .top-right ul {
@@ -69,7 +68,7 @@ body {
   letter-spacing: 0.1em;
 }
 
-/* SOCIAL LINKS + CONTACT BUTTON IN BASSO A DESTRA */
+/* BOTTOM RIGHT (SOCIAL + CONTACT) */
 .bottom-right {
   position: absolute;
   bottom: 2rem;
@@ -78,10 +77,8 @@ body {
   flex-direction: column;
   align-items: flex-end;
   gap: 1rem;
-  pointer-events: auto;
 }
 
-/* SOCIAL LINKS */
 .social-links {
   font-size: 0.9rem;
 }
@@ -92,7 +89,6 @@ body {
   margin: 0 0.5rem;
 }
 
-/* CONTACT BUTTON */
 .contact-button {
   background: none;
   border: 1px solid #1a1a1a;
@@ -112,11 +108,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  pointer-events: auto;
 }
 
-/* RESPONSIVE PER MOBILE */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .top-right ul {
     flex-direction: column;
@@ -127,11 +121,5 @@ body {
     bottom: 6rem;
     left: 2rem;
     right: auto;
-  }
-
-  .bottom-right {
-    bottom: 2rem;
-    right: 2rem;
-    align-items: flex-end;
   }
 }
