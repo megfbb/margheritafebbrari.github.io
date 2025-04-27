@@ -1,149 +1,135 @@
-/* ---------- BASE ---------- */
+/* RESET BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* STILE GENERALE */
 body {
-  margin: 0;
-  font-family: -apple-system, "Helvetica Neue", "Segoe UI", Helvetica, sans-serif;
   background: #fffdf9;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
   color: #1a1a1a;
-  letter-spacing: 0.015em;
 }
 
-/* ---------- HEADER ---------- */
-.main-header {
+/* HEADER FISSO */
+.fixed-header {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
-  padding: 2.5rem 2rem 2rem;
+  pointer-events: none; /* Lascia cliccabili i contenuti del main */
 }
 
-.left h1 {
-  margin: 0;
-  font-size: 1.6rem;
-  text-transform: uppercase;
+/* NOME + SOTTOTITOLO */
+.top-left {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  pointer-events: auto;
+}
+
+.top-left h1 {
+  font-size: 1.8rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
-  line-height: 1.2;
+  text-transform: uppercase;
+  line-height: 1;
 }
 
 .subtitle {
-  margin-top: 0.4rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 300;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: #444;
+  letter-spacing: 0.1em;
+  margin-top: 0.4rem;
 }
 
-/* ---------- NAVIGATION ---------- */
-nav ul {
+/* MENU */
+.top-right {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  pointer-events: auto;
+}
+
+.top-right ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
-  gap: 2.5rem;
+  gap: 2rem;
 }
 
-nav ul li a {
+.top-right ul li a {
   text-decoration: none;
-  color: #1a1a1a;
+  color: inherit;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.25em;
-  font-size: 0.85rem;
+  letter-spacing: 0.1em;
 }
 
-/* ---------- MAIN CONTENT ---------- */
-main {
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 3rem 2rem;
-  font-size: 1rem;
-  line-height: 1.6;
+/* SOCIAL + CONTACT */
+.bottom-right {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  pointer-events: auto;
 }
 
-section {
-  margin-bottom: 4rem;
-}
-
-h2 {
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+.social-links {
   margin-bottom: 1rem;
+  font-size: 0.9rem;
 }
 
-a {
-  color: #1a1a1a;
-  font-weight: 500;
-  text-decoration: underline;
+.social-links a {
+  color: inherit;
+  text-decoration: none;
+  margin: 0 0.5rem;
 }
 
-/* ---------- FOOTER ---------- */
-footer {
-  position: fixed;
-  bottom: 1rem;
-  left: 2rem;
-  font-size: 0.8rem;
-  color: #777;
-  z-index: 100;
-  font-weight: 400;
-  letter-spacing: 0.03em;
-}
-
-/* ---------- RESPONSIVE LAYOUT ---------- */
-@media (max-width: 768px) {
-  .main-header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1.8rem 1.5rem;
-  }
-
-  .left {
-    margin-bottom: 1.2rem;
-  }
-
-  .left h1 {
-    font-size: 1.4rem;
-  }
-
-  .subtitle {
-    font-size: 0.8rem;
-  }
-
-  nav {
-    width: 100%;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.6rem;
-  }
-
-  nav ul li {
-    list-style: none;
-  }
-
-  nav ul li a {
-    font-size: 0.95rem;
-    letter-spacing: 0.18em;
-  }
-
-  main {
-    padding: 2rem 1.5rem;
-  }
-
-  footer {
-    bottom: 1rem;
-    left: 1.5rem;
-    font-size: 0.75rem;
-  }
-}
-
-.tagline {
+.contact-button {
+  background: none;
+  border: 1px solid #1a1a1a;
+  padding: 0.8rem 1.5rem;
   text-transform: uppercase;
-  font-weight: 300;
-  letter-spacing: 0.08em;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #1a1a1a;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+}
+
+/* CONTENUTO CENTRALE */
+.main-content {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* VIDEO BACKGROUND */
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Dietro agli elementi fissi */
+}
+
+/* RESPONSIVE TABLET + TELEFONO */
+@media (max-width: 768px) {
+  .top-right ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    position: absolute;
+    top: auto;
+    bottom: 6rem;
+    left: 2rem;
+    right: auto;
+  }
 }
