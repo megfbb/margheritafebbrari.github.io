@@ -10,21 +10,23 @@ body {
   background: #fffdf9;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   color: #1a1a1a;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 /* HEADER FISSO */
 .fixed-header {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  pointer-events: none; /* Lascia cliccabili i contenuti del main */
+  pointer-events: none; /* Così il main rimane cliccabile */
 }
 
-/* NOME + SOTTOTITOLO */
+/* ELEMENTI FISSI SUI BORDI */
 .top-left {
   position: absolute;
   top: 2rem;
@@ -102,25 +104,19 @@ body {
   font-size: 0.9rem;
 }
 
-/* CONTENUTO CENTRALE */
+/* AREA CONTENUTI CENTRALE */
 .main-content {
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-/* VIDEO BACKGROUND */
-.background-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
   height: 100%;
-  object-fit: cover;
-  z-index: -1; /* Dietro agli elementi fissi */
+  overflow: hidden;
+  position: relative;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* RESPONSIVE TABLET + TELEFONO */
+/* RESPONSIVE TELEFONO */
 @media (max-width: 768px) {
   .top-right ul {
     flex-direction: column;
