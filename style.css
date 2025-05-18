@@ -123,3 +123,35 @@ body {
     right: auto;
   }
 }
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 3rem 2rem;
+}
+
+.project-box {
+  border: 1px solid #ccc;
+  padding: 2rem;
+  background-color: #fff;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.project-box:hover {
+  border-color: #000;
+  background-color: #f9f9f9;
+}
+
+.project-box h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.project-box p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}
